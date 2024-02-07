@@ -2,9 +2,11 @@ pipeline {
   agent any
 
   stages {
-    stage ('Inicial') {
+    stage ('Build Docker Image') {
       steps {
-        echo 'Iniciando a pipeline'
+        script {
+          dockerApp = docker.build("esperanca-leonardo/microservice-email", "--file Dockerfile")
+        }
       }
     }
   }
