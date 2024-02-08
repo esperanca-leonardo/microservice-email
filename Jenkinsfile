@@ -5,7 +5,7 @@ pipeline {
     stage ('Build Docker Image') {
       steps {
         script {
-          dockerApp = docker.build("esperanca-leonardo/microservice-email", "--file Dockerfile")
+          dockerApp = docker.build("esperanca-leonardo/microservice-email")
         }
       }
     }
