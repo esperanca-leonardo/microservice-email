@@ -17,11 +17,9 @@ pipeline {
     stage('Push Image') {
       steps {
         script {
-          withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-            docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-              dockerImage.push('latest')
-              dockerImage.push("${env.BUILD_ID}")
-            }
+          docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+            dockerImage.push('latest')
+            dockerImage.push("${env.BUILD_ID}")
           }
         }
       }
