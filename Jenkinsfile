@@ -7,5 +7,12 @@ pipeline {
         bat 'mvn -B -DskipTests clean package'
       }
     }
+    stage('Build Docker Image') {
+      steps {
+        script {
+          dockerImage = docker.build("esperanca-leonardo/microservice-email")
+        }
+      }
+    }
   }
 }
