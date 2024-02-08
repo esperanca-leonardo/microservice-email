@@ -10,7 +10,7 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         script {
-          dockerImage = docker.build("esperanca-leonardo/microservice-email:${env.BUILD_ID}")
+          dockerImage = docker.build("esperanca98/microservice-email:${env.BUILD_ID}")
         }
       }
     }
