@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Build Maven') {
       steps {
-        mvn 'clean package'
+        sh 'mvn -B -DskipTests clean package'
       }
     }
     stage('Build Docker Image') {
