@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -26,7 +27,10 @@ public class Email implements Serializable {
     private Long id;
 
     private String owner;
+
+    @Value("${SPRING_MAIL_USERNAME}")
     private String emailFrom;
+
     private String emailTo;
     private String subject;
     private String text;

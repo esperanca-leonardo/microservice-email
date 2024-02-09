@@ -12,10 +12,6 @@ public class EmailDto {
 
     @Email
     @NotBlank
-    private String emailFrom;
-
-    @Email
-    @NotBlank
     private String emailTo;
 
     @NotBlank
