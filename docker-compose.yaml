@@ -46,11 +46,11 @@ services:
       mysql:
         condition: service_healthy
     environment:
-      SERVER_PORT: 8081
+      SERVER_PORT: ${SEVER_PORT}
       MAIL_HOST: ${MAIL_HOST}
       MAIL_PORT: ${MAIL_PORT}
       MAIL_USERNAME: ${MAIL_USERNAME}
-      MAIL_PASSWORD: "axqo foca odvj ujaw"
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
       DATABASE_HOST: ${DATABASE_HOST}
       DATABASE_PORT: ${DATABASE_PORT}
       DATABASE_NAME: ${DATABASE_NAME}
