@@ -46,7 +46,7 @@ services:
       mysql:
         condition: service_healthy
     environment:
-      SERVER_PORT: ${SERVER_HOST_PORT}
+      SERVER_HOST_PORT: ${SERVER_HOST_PORT}
       MAIL_HOST: ${MAIL_HOST}
       MAIL_PORT: ${MAIL_PORT}
       MAIL_USERNAME: ${MAIL_USERNAME}
