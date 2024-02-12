@@ -28,6 +28,6 @@ public class EmailController {
 
     @GetMapping
     public String banana() {
-        return "Funcionalidade nova";
+        return "teste";
     }
 }
