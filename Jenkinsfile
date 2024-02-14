@@ -1,6 +1,9 @@
 pipeline {
   agent any
 
+  environment {
+    imageTag = ""
+  }
   stages {
     stage('Build Project') {
       steps {
@@ -10,8 +13,6 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         script {
-          def imageTag = ""
-
           if (env.BRANCH_NAME == 'main') {
             imageTag = "production"
           }
