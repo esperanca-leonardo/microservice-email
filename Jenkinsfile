@@ -9,8 +9,9 @@ pipeline {
     }
     stage('Build Docker Image') {
       steps {
+        def imageTag = ""
+
         script {
-          def imageTag = ""
           if (env.BRANCH_NAME == 'main') {
             imageTag = "production"
           }
