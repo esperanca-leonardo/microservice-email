@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    imageTag = ""
+     imageTag = "${env.BUILD_ID}-${env.BRANCH_NAME}"
   }
   stages {
     stage('Build Project') {
@@ -13,12 +13,6 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         script {
-          if (env.BRANCH_NAME == 'main') {
-            imageTag = "production"
-          }
-          else {
-            imageTag = "develop"
-          }
           dockerImage = docker.build("esperanca98/microservice-email:${imageTag}")
         }
       }
