@@ -1,11 +1,6 @@
 pipeline {
   agent any
 
-  environment {
-      BUILD_ID_DEVELOP = "${env.BUILD_ID}-develop"
-      BUILD_ID_PRODUCTION = "${env.BUILD_ID}-production"
-    }
-
   stages {
     stage('Build Project') {
       steps {
@@ -15,12 +10,15 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         script {
+          def imageTag = ""
+
           if (env.BRANCH_NAME == 'main') {
-            dockerImage = docker.build("esperanca98/microservice-email:${env.BUILD_ID_PRODUCTION}")
+            imageTag = "production"
           }
           else {
-            dockerImage = docker.build("esperanca98/microservice-email:${env.BUILD_ID_DEVELOP}")
+            imageTag = "develop"
           }
+          dockerImage = docker.build("esperanca98/microservice-email:${imageTag}")
         }
       }
     }
@@ -28,7 +26,7 @@ pipeline {
       steps {
         script {
           docker.withRegistry('', 'dockerhub') {
-            dockerImage.push()
+            dockerImage.push(imageTag)
           }
         }
       }
