@@ -3,7 +3,7 @@ pipeline {
 
   environment {
       BUILD_ID_DEVELOP = "${env.BUILD_ID}-develop"
-      BUILD_ID_MAIN = "${env.BUILD_ID}-main"
+      BUILD_ID_PRODUCTION = "${env.BUILD_ID}-production"
     }
 
   stages {
@@ -25,10 +25,10 @@ pipeline {
           docker.withRegistry('', 'dockerhub') {
             dockerImage.push('develop')
             dockerImage.push("${env.BUILD_ID_DEVELOP}")
-            def currentBranch = env.BRANCH_NAME
-            if (currentBranch == 'main') {
+
+            if (env.BRANCH_NAME == 'main') {
               dockerImage.push('production')
-              dockerImage.push("${env.BUILD_ID_MAIN}")
+              dockerImage.push("${env.BUILD_ID_PRODUCTION}")
             }
           }
         }

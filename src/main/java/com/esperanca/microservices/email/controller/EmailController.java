@@ -30,4 +30,9 @@ public class EmailController {
     public String banana() {
         return "teste";
     }
+
+    @GetMapping
+    public String test() {
+        return "nova funcionalidade da branch develop";
+    }
 }
