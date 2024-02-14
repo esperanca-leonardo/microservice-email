@@ -25,7 +25,8 @@ pipeline {
           docker.withRegistry('', 'dockerhub') {
             dockerImage.push('develop')
             dockerImage.push("${env.BUILD_ID_DEVELOP}")
-            if (branch == 'main') {
+            def currentBranch = env.BRANCH_NAME
+            if (currentBranch == 'main') {
               dockerImage.push('production')
               dockerImage.push("${env.BUILD_ID_MAIN}")
             }
