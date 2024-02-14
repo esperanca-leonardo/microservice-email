@@ -23,12 +23,13 @@ pipeline {
       steps {
         script {
           docker.withRegistry('', 'dockerhub') {
-            dockerImage.push('develop')
-            dockerImage.push("${env.BUILD_ID_DEVELOP}")
-
             if (env.BRANCH_NAME == 'main') {
               dockerImage.push('production')
               dockerImage.push("${env.BUILD_ID_PRODUCTION}")
+            }
+            else {
+              dockerImage.push('develop')
+              dockerImage.push("${env.BUILD_ID_DEVELOP}")
             }
           }
         }
