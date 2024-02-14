@@ -31,7 +31,7 @@ public class EmailController {
         return "teste";
     }
 
-    @GetMapping
+    @GetMapping("/teste")
     public String test() {
         return "nova funcionalidade da branch develop";
     }
