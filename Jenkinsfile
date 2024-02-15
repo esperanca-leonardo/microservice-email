@@ -10,7 +10,7 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         script {
-          def imageTag = "${env.BUILD_ID}-${env.BRANCH_NAME}"
+          def imageTag = "${env.BUILD_ID}-${env.GIT_BRANCH}"
           dockerImage = docker.build("esperanca98/microservice-email:${imageTag}")
           env.IMAGE_TAG = imageTag
         }
