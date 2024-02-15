@@ -12,6 +12,7 @@ pipeline {
         script {
           def imageTag = "${env.BUILD_ID}-${env.BRANCH_NAME}"
           dockerImage = docker.build("esperanca98/microservice-email:${imageTag}")
+          env.IMAGE_TAG = imageTag
         }
       }
     }
@@ -19,7 +20,7 @@ pipeline {
       steps {
         script {
           docker.withRegistry('', 'dockerhub') {
-            dockerImage.push(imageTag)
+            dockerImage.push(env.IMAGE_TAG = imageTag)
           }
         }
       }
