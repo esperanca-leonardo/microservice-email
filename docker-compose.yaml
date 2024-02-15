@@ -10,12 +10,12 @@ services:
     networks:
       - microservice-email-network
     ports:
-      - "${DATABASE_HOST_PORT}:${DATABASE_DOCKER_PORT}"
+      - "${DATABASE_HOST_PORT:-3306}:${DATABASE_DOCKER_PORT:-3306}"
     environment:
-      MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${DATABASE_NAME}
-      MYSQL_USER: ${DATABASE_USER}
-      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD:-123}
+      MYSQL_DATABASE: ${DATABASE_NAME:-microservice_email}
+      MYSQL_USER: ${DATABASE_USER:-user}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD:-123}
     healthcheck:
       test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
       timeout: 20s
@@ -26,33 +26,33 @@ services:
     networks:
       - microservice-email-network
     ports:
-      - "${PHPMYADMIN_HOST_PORT}:${PHPMYADMIN_DOCKER_PORT}"
+      - "${PHPMYADMIN_HOST_PORT:-8081}:${PHPMYADMIN_DOCKER_PORT:-80}"
     depends_on:
       mysql:
         condition: service_healthy
     environment:
-      PMA_HOST: ${DATABASE_HOST}
-      PMA_PORT: ${DATABASE_HOST_PORT}
-      PMA_USER: ${DATABASE_USER}
-      PMA_PASSWORD: ${DATABASE_PASSWORD}
+      PMA_HOST: ${DATABASE_HOST:-mysql}
+      PMA_PORT: ${DATABASE_HOST_PORT:-3306}
+      PMA_USER: ${DATABASE_USER:-user}
+      PMA_PASSWORD: ${DATABASE_PASSWORD:-123}
 
   microservice-email:
     image: esperanca98/microservice-email:latest
     networks:
       - microservice-email-network
     ports:
-      - "${SERVER_HOST_PORT}:${SERVER_DOCKER_PORT}"
+      - "${SERVER_HOST_PORT:-8080}:${SERVER_DOCKER_PORT:-8080}"
     depends_on:
       mysql:
         condition: service_healthy
     environment:
-      SERVER_HOST_PORT: ${SERVER_HOST_PORT}
+      SERVER_HOST_PORT: ${SERVER_HOST_PORT:-8080}
       MAIL_HOST: ${MAIL_HOST}
       MAIL_PORT: ${MAIL_PORT}
       MAIL_USERNAME: ${MAIL_USERNAME}
       MAIL_PASSWORD: ${MAIL_PASSWORD}
-      DATABASE_HOST: ${DATABASE_HOST}
-      DATABASE_PORT: ${DATABASE_HOST_PORT}
-      DATABASE_NAME: ${DATABASE_NAME}
-      DATABASE_USERNAME: ${DATABASE_USER}
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_HOST: ${DATABASE_HOST:-mysql}
+      DATABASE_PORT: ${DATABASE_HOST_PORT:-3306}
+      DATABASE_NAME: ${DATABASE_NAME:-microservice_email}
+      DATABASE_USERNAME: ${DATABASE_USER:-user}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD:-123}
