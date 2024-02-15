@@ -20,7 +20,7 @@ pipeline {
       steps {
         script {
           docker.withRegistry('', 'dockerhub') {
-            dockerImage.push(env.IMAGE_TAG = imageTag)
+            dockerImage.push(env.IMAGE_TAG)
           }
         }
       }
