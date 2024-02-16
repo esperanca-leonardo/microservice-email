@@ -10,7 +10,7 @@ services:
     networks:
       - microservice-email-network
     ports:
-      - "${DATABASE_HOST_PORT}:${DATABASE_DOCKER_PORT}"
+      - "${DATABASE_HOST_PORT:-3306}:${DATABASE_DOCKER_PORT:-3306}"
     env_file:
       - env/common.env
       - env/mysql.env
@@ -24,12 +24,11 @@ services:
     networks:
       - microservice-email-network
     ports:
-      - "${PHPMYADMIN_HOST_PORT}:${PHPMYADMIN_DOCKER_PORT}"
+      - "${PHPMYADMIN_HOST_PORT:-8081}:${PHPMYADMIN_DOCKER_PORT:-80}"
     depends_on:
       mysql:
         condition: service_healthy
     env_file:
-      - env/common.env
       - env/phpmyadmin.env
 
   microservice-email:
