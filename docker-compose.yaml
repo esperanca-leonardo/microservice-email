@@ -31,7 +31,7 @@ services:
       - env/phpmyadmin.env
 
   microservice-email:
-    image: esperanca98/microservice-email:latest
+    image: esperanca98/microservice-email:${IMAGE_TAG}
     networks:
       - microservice-email-network
     ports:
