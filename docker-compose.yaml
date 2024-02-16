@@ -10,7 +10,7 @@ services:
     networks:
       - microservice-email-network
     ports:
-      - "${DATABASE_HOST_PORT:-3306}:${DATABASE_DOCKER_PORT:-3306}"
+      - "${DATABASE_HOST_PORT}:${DATABASE_DOCKER_PORT}"
     env_file:
       - env/mysql.env
     healthcheck:
@@ -35,7 +35,7 @@ services:
     networks:
       - microservice-email-network
     ports:
-      - "${SERVER_HOST_PORT:-8080}:${SERVER_DOCKER_PORT:-8080}"
+      - "${SERVER_HOST_PORT}:${SERVER_DOCKER_PORT:-8080}"
     depends_on:
       mysql:
         condition: service_healthy
