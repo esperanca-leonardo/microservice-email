@@ -10,7 +10,7 @@ services:
     networks:
       - microservice-email-network
     ports:
-      - "${DATABASE_HOST_PORT:-3306}:${DATABASE_DOCKER_PORT:-3306}"
+      - "${DATABASE_HOST_PORT}:${DATABASE_DOCKER_PORT}"
     env_file:
       - env/common.env
       - env/mysql.env
