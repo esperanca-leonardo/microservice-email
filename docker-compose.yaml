@@ -40,5 +40,4 @@ services:
       mysql:
         condition: service_healthy
     env_file:
-      - env/common.env
       - env/microservice-email.env
