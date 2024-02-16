@@ -13,6 +13,7 @@ services:
       - "${DATABASE_HOST_PORT:-3306}:${DATABASE_DOCKER_PORT:-3306}"
     env_file:
       - env/mysql.env
+      - env/common.env
     healthcheck:
       test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
       timeout: 20s
@@ -29,6 +30,7 @@ services:
         condition: service_healthy
     env_file:
       - env/phpmyadmin.env
+      - env/common.env
 
   microservice-email:
     image: esperanca98/microservice-email:latest
