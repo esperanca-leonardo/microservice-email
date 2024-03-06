@@ -4,18 +4,18 @@ import com.esperanca.microservices.email.dto.EmailDto;
 import com.esperanca.microservices.email.entity.Email;
 import com.esperanca.microservices.email.service.EmailService;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping
+@AllArgsConstructor
 public class EmailController {
 
-    @Autowired
-    private EmailService service;
+    private final EmailService service;
 
     @PostMapping
     public ResponseEntity<Email> sendEmail(@RequestBody @Valid EmailDto emailDto) {
