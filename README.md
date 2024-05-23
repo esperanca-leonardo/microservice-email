@@ -13,7 +13,7 @@ Before running the application, ensure you have the following prerequisites inst
 This project uses Gmail for sending emails. You will need to generate an app password for your Gmail account. Follow the instructions [here](https://support.google.com/accounts/answer/185833?hl=en) to generate an app password.
 
 ## Initial setup
-Before launching the application, ensure you set up the following environment variables in your environment. Some default values are provided for convenience.
+Before launching the application, make sure to set up the following environment variables in your system. Default values are provided for convenience.
 ```bash
 SERVER_PORT=8080
 
