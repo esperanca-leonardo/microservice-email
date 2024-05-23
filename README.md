@@ -28,3 +28,31 @@ DATABASE_NAME=microservice_email
 DATABASE_USER=user
 DATABASE_USER_PASSWORD=123
 ```
+
+## Automatic Setup
+To make the setup easier, you can run the following script in a Windows terminal. This script will automatically set all the required environment variables:
+```bash
+@echo off
+setx SERVER_PORT 8080
+
+setx MAIL_HOST smtp.gmail.com
+setx MAIL_PORT 587
+setx MAIL_USERNAME your_email@gmail.com
+setx MAIL_PASSWORD your_app_password
+
+setx DATABASE_HOST localhost
+setx DATABASE_PORT 5432
+setx DATABASE_NAME microservice_email
+setx DATABASE_USER user
+setx DATABASE_USER_PASSWORD 123
+```
+
+## Running the Script
+1. Create a text file and copy the script above.
+2. Save the file with a `.bat` extension, like `set_environment_variables.bat`.
+3. Run the file by double-clicking on it or running it through the Windows terminal.
+
+This script will automatically set the required environment variables for the application. You only need to run the script once, and the variables will be permanently set on your system.
+
+## Note
+Make sure to replace the default values `youremail@gmail.com`, `your_app_password` with the correct values for your environment before running the script.
