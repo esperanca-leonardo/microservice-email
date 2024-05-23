@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.esperanca.microservices</groupId>
-	<artifactId>email</artifactId>
+	<artifactId>microservice-email</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Email</name>
 	<description>Demo project for Spring Boot</description>
