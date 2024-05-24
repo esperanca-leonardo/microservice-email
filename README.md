@@ -46,8 +46,8 @@ DATABASE_USER=user
 DATABASE_USER_PASSWORD=123
 ```
 
-#### 4.1 Windows
-- #### Automatic Setup
+### 5. Automatic Setup
+- #### 5.1 Windows
   To automate the setup on Windows, use the script below. It will set all the required environment variables
   
   ```bash
@@ -65,13 +65,15 @@ DATABASE_USER_PASSWORD=123
   setx DATABASE_USER user
   setx DATABASE_USER_PASSWORD 123
   ```
-
-- #### Running the Script
+  
+  #### Running the Script
   1. Create a text file and copy the script above.
   2. Save the file with a `.bat` extension, like `set_environment_variables.bat`.
   3. Run the file by double-clicking on it or running it through the Windows terminal.
 
-This script will automatically set the required environment variables for the application. You only need to run the script once, and the variables will be permanently set on your system.
+  This script will automatically set the required environment variables for the application. You only need to run the script once, and the variables will be permanently set on your system.
+
+- #### 5.2 Linux 
 
 ## Note
 Make sure to replace the default values `youremail@gmail.com`, `your_app_password` with the correct values for your environment before running the script.
