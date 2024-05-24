@@ -8,10 +8,10 @@ Microservice Email is a service developed in Java with Spring Boot, designed to 
   - [Navigate to the Project Directory](#2-navigate-to-the-project-directory)
   - [Setting up Gmail authentication](#3-setting-up-gmail-authentication)
   - [Configuring Environment Variables](#4-configuring-environment-variables)
-  - [Important Note](#important-note)
-  	- [Configuring Environment Variables Automatically](#41-configuring-environment-variables-automatically)
-    	- [Windows](#411-windows)
-     	- [Linux](#412-linux)
+	  - [Important Note](#41-important-note)
+  	- [Configuring Environment Variables Automatically](#42-configuring-environment-variables-automatically)
+    	- [Windows](#421-windows)
+     	- [Linux](#422-linux)
 	- [Initializing the Database with Docker](#5-initializing-the-database-with-docker)
   - [Run the Application](#6-run-the-application)
   	- [Windows](#windows)
@@ -54,13 +54,13 @@ DATABASE_USER=user
 DATABASE_USER_PASSWORD=123
 ```
 
-#### Important Note 
-Before proceeding with the instructions below, please remember to change the values of the following environment variables according to your credentials: `MAIL_USERNAME`, `MAIL_PASSWORD`.
+- #### 4.1 Important Note 
+	Before proceeding with the instructions below, please remember to change the values of the following environment variables according to your credentials: `MAIL_USERNAME`, `MAIL_PASSWORD`.
 
-- #### 4.1 Configuring Environment Variables Automatically
+- #### 4.2 Configuring Environment Variables Automatically
 	To make the setup process more easier, you can use a script to automatically configure these environment variables. Below are instructions and scripts for Windows and Linux systems.
 
-	- ##### 4.1.1. Windows
+	- ##### 4.2.1. Windows
 		For Windows, you can use a batch script to set the environment variables. Create a file named `set_env_vars.bat` with the following content.
 		```bash
 		@echo off
@@ -83,7 +83,7 @@ Before proceeding with the instructions below, please remember to change the val
 	  .\set_env_vars.bat	
 	  ```
 
-	- ##### 4.1.2. Linux
+	- ##### 4.2.2. Linux
 		For Linux, you can use a shell script to set the environment variables. Create a file named `set_env_vars.sh` with the following content.
 
 		```bash
