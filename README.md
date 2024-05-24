@@ -78,7 +78,7 @@ DATABASE_USER_PASSWORD=123
 	- ##### 4.1.2. Linux
 		For Linux, you can use a shell script to set the environment variables. Create a file named `set_env_vars.sh` with the following content.
 
-		```shell
+		```bash
 		#!/bin/bash
 
 		if [ -f ~/.bashrc ]; then
@@ -98,7 +98,7 @@ DATABASE_USER_PASSWORD=123
 		  echo "Arquivo ~/.bashrc not found. Variables not defined."
 		  exit 1
 		fi
-    ```
+  
 ### 5. Initializing the Database with Docker
 This project is facilitated by a docker-compose.yml file, encapsulating all the essential configurations to bootstrap the database infrastructure. Copy and paste the command below into the terminal to start the database.
  ```bash
