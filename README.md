@@ -78,6 +78,27 @@ DATABASE_USER_PASSWORD=123
 	- ##### 4.1.2. Linux
 		For Linux, you can use a shell script to set the environment variables. Create a file named `set_env_vars.sh` with the following content.
 
+		```shell
+		#!/bin/bash
+
+		if [ -f ~/.bashrc ]; then
+		  echo "export SERVER_PORT=8080" >> ~/.bashrc
+
+		  echo "export MAIL_HOST=smtp.gmail.com" >> ~/.bashrc
+		  echo "export MAIL_PORT=587" >> ~/.bashrc
+		  echo "export MAIL_USERNAME=your_email@gmail.com" >> ~/.bashrc
+		  echo "export MAIL_PASSWORD=your_app_password" >> ~/.bashrc
+
+		  echo "export DATABASE_HOST=localhost" >> ~/.bashrc
+		  echo "export DATABASE_PORT=5432" >> ~/.bashrc
+		  echo "export DATABASE_NAME=microservice_email" >> ~/.bashrc
+		  echo "export DATABASE_USER=user" >> ~/.bashrc
+		  echo "export DATABASE_USER_PASSWORD=123" >> ~/.bashrc
+		else
+		  echo "Arquivo ~/.bashrc not found. Variables not defined."
+		  exit 1
+		fi
+    ```
 ### 5. Initializing the Database with Docker
 This project is facilitated by a docker-compose.yml file, encapsulating all the essential configurations to bootstrap the database infrastructure. Copy and paste the command below into the terminal to start the database.
  ```bash
