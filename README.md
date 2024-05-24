@@ -10,7 +10,7 @@ Microservice Email is a service developed in Java with Spring Boot, designed to 
   - [Configuring Environment Variables](#4-configuring-environment-variables)
 
 ## 📋 Prerequisites
-Before running the application, ensure you have the following prerequisites installed:
+Before running the application, ensure you have the following prerequisites installed.
 - [**Git:**](https://git-scm.com/) Widely-used distributed version control system.
 - [**Java 17:**](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) A stable version of the Java Development Kit (JDK).
 - [**Docker:**](https://www.docker.com/) A platform for developing, shipping, and running applications in containers.
@@ -30,7 +30,7 @@ cd microservice-email
 This project uses Gmail for sending emails. You will need to generate an app password for your Gmail account. Follow the instructions [here](https://support.google.com/accounts/answer/185833?hl=en) to generate an app password.
 
 ### 4. Configuring Environment Variables
-Before utilizing this project, it's crucial to configure certain environment variables on your system. To simplify this process, default values are provided as follows:
+Before utilizing this project, it's crucial to configure certain environment variables on your system. To simplify this process, default values are provided as follows.
 ```bash
 SERVER_PORT=8080
 
@@ -50,7 +50,7 @@ DATABASE_USER_PASSWORD=123
 	To make the setup process more easier, you can use a script to automatically configure these environment variables. Below are instructions and scripts for Windows and Linux systems.
 
 	- ##### 4.1.1. Windows
-		For Windows, you can use a batch script to set the environment variables. Create a file named set_env_vars.bat with the following content.
+		For Windows, you can use a batch script to set the environment variables. Create a file named `set_env_vars.bat` with the following content.
 		```bash
 		@echo off
 		setx SERVER_PORT 8080
@@ -68,7 +68,7 @@ DATABASE_USER_PASSWORD=123
 		```
 
 	- ##### 4.1.2. Linux
-		For Linux, you can use a shell script to set the environment variables. Create a file named set_env_vars.sh with the following content.
+		For Linux, you can use a shell script to set the environment variables. Create a file named `set_env_vars.sh` with the following content.
 
 ### 5. Initializing the Database with Docker
 This project is facilitated by a docker-compose.yml file, encapsulating all the essential configurations to bootstrap the database infrastructure. Copy and paste the command below into the terminal to start the database.
