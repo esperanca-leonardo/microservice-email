@@ -8,6 +8,8 @@ Microservice Email is a service developed in Java with Spring Boot, designed to 
   - [Navigate to the Project Directory](#2-navigate-to-the-project-directory)
   - [Setting up Gmail authentication](#3-setting-up-gmail-authentication)
   - [Configuring Environment Variables](#4-configuring-environment-variables)
+  - [Automatic Setup](#5-automatic-setup)
+    - [Windows](#51-windows)
 
 ## 📋 Prerequisites
 Before running the application, ensure you have the following prerequisites installed:
@@ -66,16 +68,50 @@ DATABASE_USER_PASSWORD=123
   setx DATABASE_USER_PASSWORD 123
   ```
   
-  #### Running the Script
+  ##### Running the Script
   1. Create a text file and copy the script above.
   2. Save the file with a `.bat` extension, like `set_environment_variables.bat`.
   3. Run the file by double-clicking on it or running it through the Windows terminal.
 
-  This script will automatically set the required environment variables for the application. You only need to run the script once, and the variables will be permanently set on your system.
+- #### 5.2 Linux
+  To automate the setup on Linux, use the script below. It will set all the required environment variables and make them persistent:
 
-- #### 5.2 Linux 
+  ```bash
+  #!/bin/bash
+  export SERVER_PORT=8080
+  
+  export MAIL_HOST=smtp.gmail.com
+  export MAIL_PORT=587
+  export MAIL_USERNAME=your_email@gmail.com
+  export MAIL_PASSWORD=your_app_password
+  
+  export DATABASE_HOST=localhost
+  export DATABASE_PORT=5432
+  export DATABASE_NAME=microservice_email
+  export DATABASE_USER=user
+  export DATABASE_USER_PASSWORD=123
+  
+  # Save the variables in ~/.bashrc to make them persistent
+  echo "export SERVER_PORT=8080" >> ~/.bashrc
+  
+  echo "export MAIL_HOST=smtp.gmail.com" >> ~/.bashrc
+  echo "export MAIL_PORT=587" >> ~/.bashrc
+  echo "export MAIL_USERNAME=your_email@gmail.com" >> ~/.bashrc
+  echo "export MAIL_PASSWORD=your_app_password" >> ~/.bashrc
+  
+  echo "export DATABASE_HOST=localhost" >> ~/.bashrc
+  echo "export DATABASE_PORT=5432" >> ~/.bashrc
+  echo "export DATABASE_NAME=microservice_email" >> ~/.bashrc
+  echo "export DATABASE_USER=user" >> ~/.bashrc
+  echo "export DATABASE_USER_PASSWORD=123" >> ~/.bashrc
+  ```
 
-## Note
+#### Running the Script on Linux
+Create a text file and copy the script above.
+Save the file with a .sh extension, like set_environment_variables.sh.
+Execute the file in the terminal
+
+#### Note
 Make sure to replace the default values `youremail@gmail.com`, `your_app_password` with the correct values for your environment before running the script.
 
 
