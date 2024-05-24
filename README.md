@@ -65,7 +65,7 @@ Before proceeding with the instructions below, please remember to change the val
 		setx MAIL_HOST smtp.gmail.com
 		setx MAIL_PORT 587
 		setx MAIL_USERNAME your_email@gmail.com
-		setx MAIL_PASSWORD your_app_password
+		setx MAIL_PASSWORD "your_app_password"
 		
 		setx DATABASE_HOST localhost
 		setx DATABASE_PORT 5432
@@ -91,7 +91,7 @@ Before proceeding with the instructions below, please remember to change the val
 		  echo "export MAIL_HOST=smtp.gmail.com" >> ~/.bashrc
 		  echo "export MAIL_PORT=587" >> ~/.bashrc
 		  echo "export MAIL_USERNAME=your_email@gmail.com" >> ~/.bashrc
-		  echo "export MAIL_PASSWORD=your_app_password" >> ~/.bashrc
+		  echo "export MAIL_PASSWORD='your_app_password'" >> ~/.bashrc
 
 		  echo "export DATABASE_HOST=localhost" >> ~/.bashrc
 		  echo "export DATABASE_PORT=5432" >> ~/.bashrc
