@@ -12,6 +12,10 @@ Microservice Email is a service developed in Java with Spring Boot, designed to 
   	- [Configuring Environment Variables Automatically](#41-configuring-environment-variables-automatically)
     	- [Windows](#411-windows)
      	- [Linux](#412-linux)
+	- [Initializing the Database with Docker](#5-initializing-the-database-with-docker)
+  - [Run the Application](#6-run-the-application)
+  	- [Windows](#windows)
+   	- [Linux](#linux)
 
 ## 📋 Prerequisites
 Before running the application, ensure you have the following prerequisites installed.
