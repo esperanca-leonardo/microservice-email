@@ -98,7 +98,17 @@ DATABASE_USER_PASSWORD=123
 		  echo "Arquivo ~/.bashrc not found. Variables not defined."
 		  exit 1
 		fi
-  
+		```
+  		Please run the following command to apply changes
+		```bash
+		source ~/.bashrc
+		```
+  		To run the script, copy and paste the command bellow in the terminal.
+	   ```bash
+	   chmod u+x set_env_vars.sh && ./set_env_vars.sh
+	   ```
+   
+
 ### 5. Initializing the Database with Docker
 This project is facilitated by a docker-compose.yml file, encapsulating all the essential configurations to bootstrap the database infrastructure. Copy and paste the command below into the terminal to start the database.
  ```bash
