@@ -8,6 +8,7 @@ Microservice Email is a service developed in Java with Spring Boot, designed to 
   - [Navigate to the Project Directory](#2-navigate-to-the-project-directory)
   - [Setting up Gmail authentication](#3-setting-up-gmail-authentication)
   - [Configuring Environment Variables](#4-configuring-environment-variables)
+  - [Important Note](#important-note)
   	- [Configuring Environment Variables Automatically](#41-configuring-environment-variables-automatically)
     	- [Windows](#411-windows)
      	- [Linux](#412-linux)
@@ -49,7 +50,7 @@ DATABASE_USER=user
 DATABASE_USER_PASSWORD=123
 ```
 
-### Important Note 
+#### Important Note 
 Before proceeding with the instructions below, please remember to change the values of the following environment variables according to your credentials: `MAIL_USERNAME`, `MAIL_PASSWORD`.
 
 - #### 4.1 Configuring Environment Variables Automatically
