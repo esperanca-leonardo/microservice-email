@@ -99,14 +99,15 @@ DATABASE_USER_PASSWORD=123
 		  exit 1
 		fi
 		```
-  		Please run the following command to apply changes
+  
+ 		Please run the following command to apply changes.
 		```bash
 		source ~/.bashrc
 		```
-  		To run the script, copy and paste the command bellow in the terminal.
-	   ```bash
-	   chmod u+x set_env_vars.sh && ./set_env_vars.sh
-	   ```
+		To run the script, copy and paste the command bellow in the terminal.
+	 	```bash
+	 	chmod u+x set_env_vars.sh && ./set_env_vars.sh
+	  ```
    
 
 ### 5. Initializing the Database with Docker
