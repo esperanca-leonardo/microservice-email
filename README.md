@@ -46,8 +46,32 @@ DATABASE_USER=user
 DATABASE_USER_PASSWORD=123
 ```
 
+- #### 4.1 Configuring Environment Variables Automatically
+	To make the setup process more easier, you can use a script to automatically configure these environment variables. Below are instructions and scripts for Windows and Linux systems.
+
+	- ##### 4.1.1. Windows
+		For Windows, you can use a batch script to set the environment variables. Create a file named set_env_vars.bat with the following content.
+		```bash
+		@echo off
+		setx SERVER_PORT 8080
+		
+		setx MAIL_HOST smtp.gmail.com
+		setx MAIL_PORT 587
+		setx MAIL_USERNAME your_email@gmail.com
+		setx MAIL_PASSWORD your_app_password
+		
+		setx DATABASE_HOST localhost
+		setx DATABASE_PORT 5432
+		setx DATABASE_NAME microservice_email
+		setx DATABASE_USER user
+		setx DATABASE_USER_PASSWORD 123
+		```
+
+	- ##### 4.1.2. Linux
+		For Linux, you can use a shell script to set the environment variables. Create a file named set_env_vars.sh with the following content.
+
 ### 5. Initializing the Database with Docker
-This project is facilitated by a docker-compose.yml file, encapsulating all the essential configurations to bootstrap the database infrastructure. Copy and paste the command below into the terminal to start the database
+This project is facilitated by a docker-compose.yml file, encapsulating all the essential configurations to bootstrap the database infrastructure. Copy and paste the command below into the terminal to start the database.
  ```bash
  docker-compose up -d
  ```
