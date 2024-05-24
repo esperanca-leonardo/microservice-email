@@ -103,7 +103,7 @@ DATABASE_USER_PASSWORD=123
 		  echo "export DATABASE_USER=user" >> ~/.bashrc
 		  echo "export DATABASE_USER_PASSWORD=123" >> ~/.bashrc
 		else
-		  echo "Arquivo ~/.bashrc not found. Variables not defined."
+		  echo "~/.bashrc file not found. Variables not defined."
 		  exit 1
 		fi
 		```
