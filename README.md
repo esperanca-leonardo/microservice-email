@@ -8,8 +8,6 @@ Microservice Email is a service developed in Java with Spring Boot, designed to 
   - [Navigate to the Project Directory](#2-navigate-to-the-project-directory)
   - [Setting up Gmail authentication](#3-setting-up-gmail-authentication)
   - [Configuring Environment Variables](#4-configuring-environment-variables)
-  - [Automatic Setup](#5-automatic-setup)
-    - [Windows](#51-windows)
 
 ## 📋 Prerequisites
 Before running the application, ensure you have the following prerequisites installed:
