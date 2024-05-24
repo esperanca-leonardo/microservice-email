@@ -104,15 +104,15 @@ Before proceeding with the instructions below, please remember to change the val
 		fi
 		```
   
- 		Please run the following command to apply changes.
+		To execute the script, navigate to the directory containing `set_env_vars.sh` and run the following command.
+	 	```bash
+	 	chmod u+x set_env_vars.sh && ./set_env_vars.sh
+	 	 ```
+
+   		After running the script, remember to apply the changes by executing
 		```bash
 		source ~/.bashrc
 		```
-		To run the script, copy and paste the command bellow in the terminal.
-	 	```bash
-	 	chmod u+x set_env_vars.sh && ./set_env_vars.sh
-	  ```
-   
 
 ### 5. Initializing the Database with Docker
 This project is facilitated by a docker-compose.yml file, encapsulating all the essential configurations to bootstrap the database infrastructure. Copy and paste the command below into the terminal to start the database.
