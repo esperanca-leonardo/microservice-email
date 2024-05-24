@@ -49,6 +49,9 @@ DATABASE_USER=user
 DATABASE_USER_PASSWORD=123
 ```
 
+### Important Note 
+Before proceeding with the instructions below, please remember to change the values of the following environment variables according to your credentials: `MAIL_USERNAME`, `MAIL_PASSWORD`.
+
 - #### 4.1 Configuring Environment Variables Automatically
 	To make the setup process more easier, you can use a script to automatically configure these environment variables. Below are instructions and scripts for Windows and Linux systems.
 
