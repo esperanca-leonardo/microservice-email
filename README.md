@@ -66,6 +66,11 @@ DATABASE_USER_PASSWORD=123
 		setx DATABASE_USER user
 		setx DATABASE_USER_PASSWORD 123
 		```
+  
+		To run the script, double-click the `set_env_vars.bat` file or execute the below command in the terminal.
+		```bash
+	  .\set_env_vars.bat	
+	  ```
 
 	- ##### 4.1.2. Linux
 		For Linux, you can use a shell script to set the environment variables. Create a file named `set_env_vars.sh` with the following content.
